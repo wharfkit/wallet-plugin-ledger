@@ -1,13 +1,39 @@
-# @wharfkit/wallet-plugin-template
+# @wharfkit/wallet-plugin-ledger
 
-A template to create a `WalletPlugin` for use within the `@wharfkit/session` library.
+A Ledger hardware wallet plugin for use within the `@wharfkit/session` library.
+
+## Overview
+
+This plugin allows users to interact with their Ledger hardware wallet to sign transactions on supported blockchains. It supports various connection methods including WebUSB, WebHID, WebBLE, and node-hid (for Node.js environments).
+
+## Features
+
+- Connect to Ledger devices using multiple transport methods (WebUSB, WebHID, WebBLE)
+- Support for EOSIO-based blockchains
+- Secure transaction signing with Ledger hardware devices
+- Compatible with @wharfkit/session
 
 ## Usage
 
--   [Use this as a template.](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
--   Write your wallet plugin's logic.
--   Publish it on Github or npmjs.com
--   Include it in your project and use it.
+```typescript
+import { SessionKit } from '@wharfkit/session'
+import { WalletPluginLedger } from '@wharfkit/wallet-plugin-ledger'
+
+// Create a new SessionKit with the Ledger wallet plugin
+const kit = new SessionKit({
+  appName: 'My App',
+  chains: [...],
+  walletPlugins: [
+    new WalletPluginLedger()
+  ]
+})
+
+// Login with Ledger
+const { session } = await kit.login()
+
+// Sign transactions
+const result = await session.transact(...)
+```
 
 ## Developing
 

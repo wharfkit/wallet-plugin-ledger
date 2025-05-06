@@ -1,12 +1,12 @@
 {
-    "name": "@wharfkit/wallet-plugin-template",
-    "description": "A template to create wallet plugins for use with @wharfkit/session.",
-    "version": "1.1.0",
-    "homepage": "https://github.com/wharfkit/wallet-plugin-template",
+    "name": "@wharfkit/wallet-plugin-ledger",
+    "description": "A Ledger hardware wallet plugin for use with @wharfkit/session.",
+    "version": "0.1.0",
+    "homepage": "https://github.com/wharfkit/wallet-plugin-ledger",
     "license": "BSD-3-Clause",
-    "main": "lib/wallet-plugin-template.js",
-    "module": "lib/wallet-plugin-template.m.js",
-    "types": "lib/wallet-plugin-template.d.ts",
+    "main": "lib/wallet-plugin-ledger.js",
+    "module": "lib/wallet-plugin-ledger.m.js",
+    "types": "lib/wallet-plugin-ledger.d.ts",
     "sideEffects": false,
     "files": [
         "lib/*",
@@ -16,6 +16,10 @@
         "prepare": "make"
     },
     "dependencies": {
+        "@ledgerhq/hw-transport-node-hid": "^6.27.1",
+        "@ledgerhq/hw-transport-web-ble": "^6.27.1",
+        "@ledgerhq/hw-transport-webhid": "^6.27.1",
+        "@ledgerhq/hw-transport-webusb": "^6.27.1",
         "tslib": "^2.1.0"
     },
     "peerDependencies": {
@@ -31,7 +35,7 @@
         "@rollup/plugin-virtual": "^2.0.3",
         "@types/chai": "^4.3.1",
         "@types/mocha": "^9.0.0",
-        "@types/node": "^18.7.18",
+        "@types/node": "^22.15.12",
         "@typescript-eslint/eslint-plugin": "^5.20.0",
         "@typescript-eslint/parser": "^5.20.0",
         "@wharfkit/mock-data": "^1.2.0",
