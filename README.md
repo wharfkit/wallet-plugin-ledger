@@ -2,6 +2,10 @@
 
 A Ledger hardware wallet plugin for use within the `@wharfkit/session` library.
 
+### IN DEVELOPMENT
+
+We do not recommend using this plugin at this time.
+
 ## Overview
 
 This plugin allows users to interact with their Ledger hardware wallet to sign transactions on supported blockchains. It supports various connection methods including WebUSB, WebHID, WebBLE, and node-hid (for Node.js environments).
